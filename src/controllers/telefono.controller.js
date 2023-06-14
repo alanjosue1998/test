@@ -1,9 +1,9 @@
 import { getConnection } from "./../database/database";
 
-const getLanguages = async (req, res) => {
+const getTelefonos = async (req, res) => {
     try {
         const connection = await getConnection();
-        const result = await connection.query("SELECT id, name, programmers FROM telefono");
+        const result = await connection.query("SELECT id, Modelo, Color, Tipo FROM telefono");
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -15,7 +15,7 @@ const getTelefono = async (req, res) => {
     try {
         const { id } = req.params;
         const connection = await getConnection();
-        const result = await connection.query("SELECT id, Modelo, programmers FROM telefono WHERE id = ?", id);
+        const result = await connection.query("SELECT id, Modelo, Color, Tipo FROM telefono WHERE id = ?", id);
         res.json(result);
     } catch (error) {
         res.status(500);

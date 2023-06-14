@@ -3,7 +3,7 @@ import { methods as telefonoController } from "./../controllers/telefono.control
 
 const router = Router();
 
-router.get("/", telefonoeController.getTelefono);
+router.get("/", telefonoController.getTelefonos);
 router.get("/:id", telefonoController.getTelefono);
 router.post("/", telefonoController.addTelefono);
 router.put("/:id", telefonoController.updateTelefono);
